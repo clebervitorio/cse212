@@ -4,7 +4,7 @@ Console.WriteLine(MysteryStack1.Run("stressed"));
 Console.WriteLine(MysteryStack1.Run("a nut for a jar of tuna"));
 
 Console.WriteLine("\n======================\nMysteryStack2\n======================");
-Console.WriteLine(MysteryStack2.Run("5 3 7 + *"));
+Console.WriteLine(MysteryStack2.Run("3 4 5 6 * +"));
 Console.WriteLine(MysteryStack2.Run("6 2 + 5 3 - /"));
 try {
     MysteryStack2.Run("3 +");
