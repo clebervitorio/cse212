@@ -28,7 +28,27 @@ public class CustomerService {
 
         Console.WriteLine("=================");
 
+        // cs.AddNewCustomer();
+        // Console.WriteLine(cs);
+
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
+
+        // var queueSize = new CustomerService(2);
+        // queueSize.AddNewCustomer();
+        // queueSize.AddNewCustomer();
+        // queueSize.AddNewCustomer();
+        // Console.WriteLine(queueSize);
         // Add more Test Cases As Needed Below
+
+        Console.WriteLine("=================");
+        var cs = new CustomerService(2);
+        cs.AddNewCustomer();
+        
+        cs.ServeCustomer();
+        cs.ServeCustomer();
+        Console.WriteLine(cs);
     }
 
     private readonly List<Customer> _queue = new();
