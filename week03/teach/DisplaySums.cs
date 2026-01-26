@@ -1,5 +1,7 @@
-﻿public static class DisplaySums {
-    public static void Run() {
+﻿public static class DisplaySums 
+{
+    public static void Run() 
+    {
         DisplaySumPairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         // Should show something like (order does not matter):
         // 6 4
@@ -27,7 +29,32 @@
     /// in the list.
     /// </summary>
     /// <param name="numbers">array of integers</param>
-    private static void DisplaySumPairs(int[] numbers) {
+    private static void DisplaySumPairs(int[] numbers) 
+    {
         // TODO Problem 2 - This should print pairs of numbers in the given array
+         Dictionary<int, bool> seenNumbers = new Dictionary<int, bool>();
+         foreach (int currentNumber in numbers)
+        {
+            int complement = 10 - currentNumber;
+
+            if (seenNumbers.ContainsKey(complement))
+            {
+                // Found a pair!
+                if (currentNumber < complement)
+                {
+                    Console.WriteLine($"({currentNumber}, {complement})");
+                }
+                else
+                {
+                    Console.WriteLine($"({complement}, {currentNumber})");
+                }
+            }
+            // Add the current number to the dictionary.
+            // We use TryAdd() to safely attempt the insertion, avoiding an exception
+            // in case the number already exists as a key.
+            // Even though the problem guarantees there are no duplicates in the input,
+            // this approach follows good defensive programming practices.
+            seenNumbers.TryAdd(currentNumber, true);
+        }
     }
 }
